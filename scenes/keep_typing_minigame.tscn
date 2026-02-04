@@ -1,3 +1,47 @@
 [gd_scene format=3 uid="uid://bgm7gjxfxyuor"]
 
-[node name="KeepTyping_minigame" type="Node2D" unique_id=1744130227]
+[ext_resource type="Script" uid="uid://binxl0e1yby2p" path="res://scenes/keep_typing_minigame.gd" id="1_0yvl0"]
+
+[node name="KeepTyping_minigame" type="Control" unique_id=289336429]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0yvl0")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1079272423]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="UI" type="MarginContainer" parent="." unique_id=1640687144]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBC" type="HBoxContainer" parent="UI" unique_id=1254125767]
+layout_mode = 2
+
+[node name="Order_L" type="Label" parent="UI/HBC" unique_id=297068005]
+layout_mode = 2
+text = "TYPE!!!!!"
+
+[node name="Input_Line" type="Label" parent="UI/HBC" unique_id=979787633]
+layout_mode = 2
+
+[node name="Count_L" type="Label" parent="UI/HBC" unique_id=886955870]
+layout_mode = 2
+text = "Timer: 0"
+
+[node name="Result_L" type="Label" parent="UI/HBC" unique_id=2081811101]
+layout_mode = 2
+text = "Timer: 0"
+
+[node name="Timer_L" type="Timer" parent="." unique_id=1929578172]
+
+[node name="Ready_Timer" type="Timer" parent="." unique_id=899257192]

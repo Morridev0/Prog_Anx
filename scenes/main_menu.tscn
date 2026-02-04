@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://dmi101r1d3smm"]
 
-[ext_resource type="Texture2D" uid="uid://bj6nwo7eaq46b" path="res://icon.svg" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://d2fhvttv7fyoj" path="res://assets/images/menu_ppal.png" id="1_l6cm7"]
+[ext_resource type="Script" uid="uid://cq6eb657fsy81" path="res://scripts/pulsing_background.gd" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://c7voprduepatw" path="res://assets/images/title.jpg" id="3_bqqt6"]
 
 [node name="MainMenu" type="Control" unique_id=474281278]
+clip_contents = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,7 +14,9 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=182503795]
+show_behind_parent = true
 visibility_layer = 4
+clip_contents = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,11 +27,13 @@ theme_override_constants/margin_left = 350
 theme_override_constants/margin_right = 350
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1790497663]
+clip_contents = true
 layout_mode = 2
 theme_override_constants/separation = 100
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1982517875]
 visibility_layer = 4
+clip_contents = true
 layout_mode = 2
 theme_override_constants/separation = 30
 alignment = 1
@@ -47,12 +54,16 @@ layout_mode = 2
 text = "Exit"
 
 [node name="Background" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=732514927]
+modulate = Color(1, 1, 1, 0.5294118)
 visibility_layer = 2
+texture_filter = 1
+clip_contents = true
 layout_mode = 2
 texture = ExtResource("1_l6cm7")
-expand_mode = 3
+expand_mode = 2
+script = ExtResource("2_ekxnf")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1379631663]
+[node name="Background_menu" type="ColorRect" parent="." unique_id=1379631663]
 z_index = -1
 layout_mode = 1
 anchors_preset = 15
@@ -61,3 +72,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="Title" type="TextureRect" parent="." unique_id=722999644]
+layout_mode = 0
+offset_left = 12.305
+offset_top = 14.81
+offset_right = 332.0
+offset_bottom = 201.81
+texture = ExtResource("3_bqqt6")
+expand_mode = 3
