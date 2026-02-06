@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bgm7gjxfxyuor"]
 
-[ext_resource type="Script" uid="uid://binxl0e1yby2p" path="res://scenes/keep_typing_minigame.gd" id="1_0yvl0"]
+[ext_resource type="Script" uid="uid://binxl0e1yby2p" path="res://scripts/keep_typing_minigame.gd" id="1_0yvl0"]
 
 [node name="KeepTyping_minigame" type="Control" unique_id=289336429]
 layout_mode = 3

@@ -3,7 +3,7 @@ extends Control
 signal minigame_finished(succes: bool)
 
 @export var ready_time := 1.0 # Grace time
-@export var game_time := 5.0 # Time to win
+@export var game_time := 10.0 # Time to win
 @export var input_goal := 200 # Input goal
 @export var max_visible_chars := 35
 

@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://bhj21lnsmfi1"]
+
+[ext_resource type="Texture2D" uid="uid://cy05mj1vud0ah" path="res://assets/images/Energy_drinks.png" id="1_xy6oa"]
+
+[resource]
+atlas = ExtResource("1_xy6oa")
+region = Rect2(84, 0, 23, 59)

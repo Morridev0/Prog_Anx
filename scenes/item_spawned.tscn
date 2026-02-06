@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://p8jfp757wopf"]
+
+[ext_resource type="Script" uid="uid://8iuj65cyhbqq" path="res://scripts/item_spawned.gd" id="1_54cbo"]
+[ext_resource type="Texture2D" uid="uid://6einkc68xho8" path="res://assets/sprites/Gabi_bull.tres" id="2_j6oxl"]
+[ext_resource type="Texture2D" uid="uid://bfnwh7ihh7dof" path="res://assets/sprites/Laruxx_bull.tres" id="3_awfed"]
+[ext_resource type="Texture2D" uid="uid://bhj21lnsmfi1" path="res://assets/sprites/Morri_bull.tres" id="4_kskio"]
+[ext_resource type="Texture2D" uid="uid://dderly4544el3" path="res://assets/sprites/Water_bottle.tres" id="5_s1vp0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_obce8"]
+size = Vector2(20, 52)
+
+[node name="Item_spawned" type="Area2D" unique_id=1738289767]
+script = ExtResource("1_54cbo")
+textures = Array[Texture2D]([ExtResource("2_j6oxl"), ExtResource("3_awfed"), ExtResource("4_kskio"), ExtResource("5_s1vp0")])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=720303132]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=875008470]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_obce8")

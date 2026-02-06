@@ -1,3 +1,74 @@
 [gd_scene format=3 uid="uid://gcpojau532si"]
 
-[node name="Pick_falling_item_minigame" type="Node2D" unique_id=1412803914]
+[ext_resource type="Script" uid="uid://pgyii7gmr2v4" path="res://scripts/pick_falling_item_minigame.gd" id="1_k35ch"]
+[ext_resource type="Script" uid="uid://duf0ytpomdwu8" path="res://scenes/player.gd" id="2_l03qm"]
+[ext_resource type="Texture2D" uid="uid://bj6nwo7eaq46b" path="res://icon.svg" id="3_emres"]
+[ext_resource type="Script" uid="uid://4rhiu0m155h7" path="res://scenes/spawner.gd" id="4_emres"]
+[ext_resource type="PackedScene" uid="uid://p8jfp757wopf" path="res://scenes/item_spawned.tscn" id="5_3biwt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l03qm"]
+size = Vector2(124, 126)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k35ch"]
+size = Vector2(22.720001, 288)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ygpg7"]
+size = Vector2(25.99997, 276)
+
+[node name="Pick_falling_item_minigame" type="Control" unique_id=40202475]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k35ch")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=155687732]
+position = Vector2(574, 560)
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("2_l03qm")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1093905255]
+texture = ExtResource("3_emres")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1522194546]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_l03qm")
+
+[node name="Spawner" type="Node2D" parent="." unique_id=2061862123]
+position = Vector2(550, 0)
+script = ExtResource("4_emres")
+item_scene = ExtResource("5_3biwt")
+
+[node name="Items" type="Node2D" parent="." unique_id=1800437692]
+
+[node name="Timer_Spawn" type="Timer" parent="." unique_id=925872125]
+wait_time = 2.0
+
+[node name="Timer_Game" type="Timer" parent="." unique_id=454721721]
+
+[node name="UI" type="Control" parent="." unique_id=1635968984]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Order_L" type="Label" parent="UI" unique_id=1670977442]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=939733420]
+collision_layer = 5
+collision_mask = 5
+
+[node name="Wall1" type="CollisionShape2D" parent="StaticBody2D" unique_id=2068649822]
+position = Vector2(10.639999, 584)
+shape = SubResource("RectangleShape2D_k35ch")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1670684043]
+
+[node name="Wall2" type="CollisionShape2D" parent="StaticBody2D2" unique_id=2135803224]
+position = Vector2(1139, 583)
+shape = SubResource("RectangleShape2D_ygpg7")
